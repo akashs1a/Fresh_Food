@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mad.customer">
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/frishf"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/frishf"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <activity android:name="com.fodd.freshfoodcustomer.AndroidUI.TabApp"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.fodd.freshfoodcustomer.AndroidUI.OrderDetails"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fodd.freshfoodcustomer.AndroidUI.SignUp"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fodd.freshfoodcustomer.AndroidUI.Confirm"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fodd.freshfoodcustomer.AndroidUI.EditProfile"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fodd.freshfoodcustomer.AndroidUI.NavApp"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.fodd.freshfoodcustomer.AndroidUI.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.fodd.freshfoodcustomer.AndroidUI.SplashActivity"
+            android:label="Railway Catering"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.mad.customer.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/path_strings" />
+        </provider>
+    </application>
+
+</manifest>
